@@ -23,7 +23,7 @@ const app = express();
 const PORT = process.env.PORT || 8002;
 // const __dirname = path.resolve();
 
-app.use(express.json()); // to parse req.body
+app.use(express.json({limit:"10mb"})); // to parse req.body
 // limit shouldn't be too high to prevent DOS
 app.use(express.urlencoded({ extended: true })); // to parse form data(urlencoded)
 
